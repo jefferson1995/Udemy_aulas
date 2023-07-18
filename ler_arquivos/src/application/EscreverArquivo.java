@@ -19,13 +19,12 @@ public class EscreverArquivo {
 
         String path = "C:\\Users\\jeffe\\OneDrive\\Documentos\\Jefferson Barbosa dos Santos\\Udemy\\Java completo mais projetos\\TRABALHANDO COM ARQUIVOS\\out.txt";
 
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))){ //true indica que não é para recriar o arquivo e escrever na próxima linha
-            for(String line : lines){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) { //true indica que não é para recriar o arquivo e escrever na próxima linha
+            for (String line : lines) {
                 bw.write(line);
                 bw.newLine();
             }
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
