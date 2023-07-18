@@ -26,10 +26,19 @@ public class ManipularPastas {
             System.out.println(file);
         }
 
+        //Exemplo para pegar somente o nome do arquivo
+        for(File arquivo : files){
+            System.out.println("Nome arquivo:");
+            System.out.println(arquivo.getName());
+        }
+
+
         //Exemplo para criar uma subpasta
         boolean sucess = new File(strPath + "\\subdir").mkdir();
         System.out.println("Diretório crado com sucesso: " + sucess);
 
         sc.close();
+
+
     }
 }
