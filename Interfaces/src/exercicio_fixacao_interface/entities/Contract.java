@@ -1,8 +1,7 @@
-package exercicio_fixacao.entities;
+package exercicio_fixacao_interface.entities;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Contract {

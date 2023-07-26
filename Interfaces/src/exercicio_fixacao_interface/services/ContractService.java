@@ -1,12 +1,9 @@
-package exercicio_fixacao.services;
+package exercicio_fixacao_interface.services;
 
-import exercicio_fixacao.entities.Contract;
-import exercicio_fixacao.entities.Installment;
+import exercicio_fixacao_interface.entities.Contract;
+import exercicio_fixacao_interface.entities.Installment;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class ContractService {
 

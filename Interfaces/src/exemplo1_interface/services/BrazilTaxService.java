@@ -1,4 +1,4 @@
-package exemplo1.services;
+package exemplo1_interface.services;
 
 public class BrazilTaxService implements TaxService {  //Implementa na interface
 

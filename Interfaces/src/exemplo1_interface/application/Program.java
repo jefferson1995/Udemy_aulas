@@ -1,9 +1,9 @@
-package exemplo1.application;
+package exemplo1_interface.application;
 
-import exemplo1.entities.CarRental;
-import exemplo1.entities.Vehicle;
-import exemplo1.services.BrazilTaxService;
-import exemplo1.services.RentalService;
+import exemplo1_interface.entities.CarRental;
+import exemplo1_interface.entities.Vehicle;
+import exemplo1_interface.services.BrazilTaxService;
+import exemplo1_interface.services.RentalService;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

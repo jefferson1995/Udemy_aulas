@@ -1,4 +1,4 @@
-package exercicio_fixacao.services;
+package exercicio_fixacao_interface.services;
 
 public class PaypalService implements OnlinePaymentService {
 

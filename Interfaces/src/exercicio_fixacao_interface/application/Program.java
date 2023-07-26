@@ -1,15 +1,13 @@
-package exercicio_fixacao.application;
+package exercicio_fixacao_interface.application;
 
-import exercicio_fixacao.entities.Contract;
-import exercicio_fixacao.entities.Installment;
-import exercicio_fixacao.services.ContractService;
-import exercicio_fixacao.services.PaypalService;
+import exercicio_fixacao_interface.entities.Contract;
+import exercicio_fixacao_interface.entities.Installment;
+import exercicio_fixacao_interface.services.ContractService;
+import exercicio_fixacao_interface.services.PaypalService;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 

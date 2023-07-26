@@ -1,9 +1,7 @@
-package exercicio_fixacao.entities;
+package exercicio_fixacao_interface.entities;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class Installment {
 

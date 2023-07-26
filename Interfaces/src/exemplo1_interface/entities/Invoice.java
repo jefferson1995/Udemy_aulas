@@ -1,4 +1,4 @@
-package exemplo1.entities;
+package exemplo1_interface.entities;
 
 public class Invoice {
 

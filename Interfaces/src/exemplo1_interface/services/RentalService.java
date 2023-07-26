@@ -1,7 +1,7 @@
-package exemplo1.services;
+package exemplo1_interface.services;
 
-import exemplo1.entities.CarRental;
-import exemplo1.entities.Invoice;
+import exemplo1_interface.entities.CarRental;
+import exemplo1_interface.entities.Invoice;
 
 import java.time.Duration;
 
