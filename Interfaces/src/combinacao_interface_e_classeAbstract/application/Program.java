@@ -3,7 +3,7 @@ package combinacao_interface_e_classeAbstract.application;
 import combinacao_interface_e_classeAbstract.entities.AbstractShape;
 import combinacao_interface_e_classeAbstract.entities.Circle;
 import combinacao_interface_e_classeAbstract.entities.Rectangle;
-import enums.Color;
+import combinacao_interface_e_classeAbstract.enums.Color;
 
 public class Program {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package combinacao_interface_e_classeAbstract.entities;
 
-import enums.Color;
+import combinacao_interface_e_classeAbstract.enums.Color;
 /*
     Se torna abstract para não ter que implementar o método area da interface
  */
