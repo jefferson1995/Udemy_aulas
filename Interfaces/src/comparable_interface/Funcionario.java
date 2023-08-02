@@ -26,7 +26,7 @@ public class Funcionario implements Comparable<Funcionario> { //Para conseguir u
         this.salary = salary;
     }
 
-    //Compara um objeto com outro
+    //Compara um objeto com outroCom
     //No momento de usar o sort -> a comparação é feita por nome
     @Override
     public int compareTo(Funcionario other) {
