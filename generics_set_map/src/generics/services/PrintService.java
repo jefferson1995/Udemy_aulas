@@ -1,4 +1,4 @@
-package generics.exemplo1.services;
+package generics.services;
 
 import java.util.ArrayList;
 import java.util.List;
