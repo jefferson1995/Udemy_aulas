@@ -1,6 +1,6 @@
 package exemplo1.application;
 
-import exemplo1.application.exemplo1.services.PrintService;
+import generics.exemplo1.services.PrintService;
 
 import java.util.Locale;
 import java.util.Scanner;
