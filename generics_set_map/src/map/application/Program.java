@@ -24,7 +24,7 @@ Principais implementações:
 * TreeMap - mais lento foperacces O(log(n)) em arvore rubro-negra) e ordenado pelo
 compareTo do objeto (ou Comparator}
 
-* LinkedHashMan - velocidade intermediaria e elementos na ordem em aye sao adicionados
+* LinkedHashMan - velocidade intermediaria e elementos na ordem em que sao adicionados
 
 Alguns métodos importantes
 
