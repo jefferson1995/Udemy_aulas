@@ -26,6 +26,14 @@ public class Product {
         this.price = price;
     }
 
+    public static boolean staticProductPredicate(Product p){
+        return p.getPrice() >= 100;
+    }
+
+    public boolean nonStaticProductPredicate(){ //Trabalha com os proprios argumentos do objto
+        return price >= 100;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
