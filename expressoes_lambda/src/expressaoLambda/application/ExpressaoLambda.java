@@ -1,4 +1,4 @@
-package funcional_calc_lambda.application;
+package expressaoLambda.application;
 
 /*
     O que s]ao "expressoes lambda"?
@@ -20,6 +20,7 @@ public class ExpressaoLambda {
     }
 
     public static void main(String[] args) {
+
 
         List<Product> list = new ArrayList<>();
 

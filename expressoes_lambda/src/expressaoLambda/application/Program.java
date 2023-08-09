@@ -1,4 +1,4 @@
-package funcional_calc_lambda.application;
+package expressaoLambda.application;
 
 import java.util.Arrays;
 
