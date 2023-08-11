@@ -26,11 +26,11 @@ public class Product {
         this.price = price;
     }
 
-    public static boolean staticProductPredicate(Product p){
+    public static boolean staticProductPredicate(Product p) {
         return p.getPrice() >= 100;
     }
 
-    public boolean nonStaticProductPredicate(){ //Trabalha com os proprios argumentos do objto
+    public boolean nonStaticProductPredicate() { //Trabalha com os proprios argumentos do objto
         return price >= 100;
     }
 
@@ -38,12 +38,24 @@ public class Product {
         Exemplo consumer
      */
 
-    public static void staticPriceUpdate(Product p){
+    public static void staticPriceUpdate(Product p) {
         p.setPrice(p.getPrice() * 1.1);
     }
 
-    public void nonStaticPriceUpdate(){
+    public void nonStaticPriceUpdate() {
         setPrice(getPrice() * 1.1);
+    }
+
+
+    /*
+        Function exemplos
+     */
+    public static String staticUpperCaseName(Product p){
+        return p.getName().toUpperCase();
+    }
+
+    public String nonStaticUpperCaseName(){
+        return name.toUpperCase();
     }
 
     @Override
