@@ -106,6 +106,7 @@ https://docs.oracle.com/javase/10/docs/api/java/util/Collection.html
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Program {
@@ -131,6 +132,19 @@ public class Program {
 
         //fibonacci
         Stream<Long> st5 = Stream.iterate(new Long[] {0L, 1L}, x -> new Long[] {x[1], x[0]+x[1]}).map(p -> p [0]);
-        System.out.println(Arrays.toString(st5.limit(10).toArray()));
+        System.out.println(Arrays.toString(st5.limit(20).toArray()));
+
+
+        //pipeline
+        Stream<Integer> st6 = list.stream().map(x -> x * 10);
+        System.out.println(Arrays.toString(st6.toArray()));
+
+        int sum = list.stream().reduce(0, (x, y) -> x + y); //Pega a posição neutra da lista, se fosse vezes ia ser 1 o valor
+        System.out.println("Sum = " + sum);
+
+        //filtra os dados pares e retorna uma nova lista vezes 10
+        List<Integer> newList = list.stream().filter(x -> x % 2 == 0).map(x -> x * 10).collect(Collectors.toList());
+        System.out.println(Arrays.toString(newList.toArray()));
+
     }
 }
