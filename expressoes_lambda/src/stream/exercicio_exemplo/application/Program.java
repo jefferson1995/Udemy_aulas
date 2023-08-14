@@ -50,6 +50,8 @@ public class Program {
                     .collect(Collectors.toList());
 
             names.forEach(System.out::println);
+            System.out.println(list.size());
+
 
 
 
