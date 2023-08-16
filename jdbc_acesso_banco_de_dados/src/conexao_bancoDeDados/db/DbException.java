@@ -1,4 +1,4 @@
-package db;
+package conexao_bancoDeDados.db;
 
 /*
     Para não precisar ficar colocando muitos try e catch

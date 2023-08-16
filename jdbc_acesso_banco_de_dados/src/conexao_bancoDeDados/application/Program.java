@@ -1,6 +1,6 @@
-package application;
+package conexao_bancoDeDados.application;
 
-import db.DB;
+import conexao_bancoDeDados.db.DB;
 
 import java.sql.Connection;
 /*
