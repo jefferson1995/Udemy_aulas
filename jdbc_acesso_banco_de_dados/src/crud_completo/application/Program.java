@@ -126,8 +126,35 @@ public class Program {
         } /*catch (ParseException e) {
             throw new RuntimeException(e);
         }
-         */finally {
+         */ finally {
             DB.closeStatement(st2);
+            //DB.closeConnection();
+        }
+
+        /*
+            Exemplo para atualizar dados
+         */
+
+        Connection conn3 = null;
+        PreparedStatement st3 = null;
+
+        try {
+            conn3 = DB.getConnection();
+            st3 = conn3.prepareStatement(
+                    "UPDATE seller "
+                            + "SET BaseSalary = BaseSalary + ? "
+                            + "WHERE "
+                            + "(DepartmentId = ?)");
+            st3.setDouble(1, 200.0);
+            st3.setInt(2, 2);
+
+            int rowsAffected3 = st3.executeUpdate();
+
+            System.out.println("Done! Linhas afetadas: " + rowsAffected3);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DB.closeStatement(st3);
             DB.closeConnection();
         }
 
