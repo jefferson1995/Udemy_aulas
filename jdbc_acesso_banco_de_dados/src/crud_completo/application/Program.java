@@ -2,6 +2,7 @@ package crud_completo.application;
 
 import conexao_bancoDeDados.db.DB;
 import conexao_bancoDeDados.db.DbException;
+import conexao_bancoDeDados.db.DbIntegrityException;
 
 import java.sql.*;
 import java.text.ParseException;
@@ -43,6 +44,7 @@ Código fonte: https: //github.com/acenelio/jdbc4
  */
 public class Program {
     public static void main(String[] args) {
+
 
 
         /*
@@ -131,6 +133,11 @@ public class Program {
             //DB.closeConnection();
         }
 
+
+
+
+
+
         /*
             Exemplo para atualizar dados
          */
@@ -153,6 +160,36 @@ public class Program {
             System.out.println("Done! Linhas afetadas: " + rowsAffected3);
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            DB.closeStatement(st3);
+            //DB.closeConnection();
+        }
+
+
+
+        /*
+        Exemplo para deletar dados
+         */
+
+        Connection conn4 = null;
+        PreparedStatement st4 = null;
+
+        try {
+            conn4 = DB.getConnection();
+            st4 = conn4.prepareStatement(
+                    "DELETE FROM department "
+                            + "WHERE "
+                            + "Id = ?");
+
+            st4.setInt(1, 2);
+
+
+            int rowsAffected4 = st4.executeUpdate();
+
+            System.out.println("Done! Linhas afetadas: " + rowsAffected4);
+
+        } catch (SQLException e) {
+            throw new DbIntegrityException(e.getMessage()); //exception personalizada, para não estourar aquele erro gigante
         } finally {
             DB.closeStatement(st3);
             DB.closeConnection();
