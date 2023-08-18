@@ -1,6 +1,9 @@
 package padrao_de_projeto_DAO.application;
 
 import padrao_de_projeto_DAO.entities.Department;
+import padrao_de_projeto_DAO.entities.Seller;
+
+import java.util.Date;
 
 /*
     Padrao de projeto DAO (Data Access Object)
@@ -28,7 +31,9 @@ public class Program {
     public static void main(String[] args) {
 
         Department dp = new Department(1, "books");
+        Seller seller = new Seller(1, "bob", "bob@gmail.com", new Date(), 3000.0, dp);
         System.out.println(dp);
+        System.out.println(seller);
 
 
 
