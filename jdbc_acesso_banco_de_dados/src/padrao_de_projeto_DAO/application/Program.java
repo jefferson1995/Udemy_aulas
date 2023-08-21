@@ -6,6 +6,7 @@ import padrao_de_projeto_DAO.entities.Department;
 import padrao_de_projeto_DAO.entities.Seller;
 
 import java.util.Date;
+import java.util.List;
 
 /*
     Padrao de projeto DAO (Data Access Object)
@@ -39,7 +40,13 @@ public class Program {
         Seller seller = sellerDao.findById(3);
         System.out.println(seller);
 
-
+        //Busca por departamento
+        System.out.println("\n=== TEST 2: seller findByDepartment ==== ");
+        Department department = new Department(2, null);
+        List<Seller> list = sellerDao.findByDepartment(department);
+        for (Seller obj : list){
+            System.out.println(obj);
+        }
 
     }
 }
