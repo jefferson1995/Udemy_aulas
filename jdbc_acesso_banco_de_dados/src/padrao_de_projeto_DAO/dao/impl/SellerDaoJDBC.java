@@ -6,10 +6,7 @@ import padrao_de_projeto_DAO.dao.SellerDao;
 import padrao_de_projeto_DAO.entities.Department;
 import padrao_de_projeto_DAO.entities.Seller;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,6 +25,41 @@ public class SellerDaoJDBC implements SellerDao {
 
     @Override
     public void insert(Seller obj) {
+
+        PreparedStatement st = null;
+        try {
+            st = conn.prepareStatement(
+                    "INSERT INTO seller "
+                            + "(Name, Email, BirthDate, BaseSalary, DepartmentId) "
+                            + "VALUES "
+                            + "(?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS  //Retorna o id inserido
+            );
+
+            st.setString(1, obj.getName());
+            st.setString(2, obj.getEmail());
+            st.setDate(3, new java.sql.Date(obj.getBirthDate().getTime()));
+            st.setDouble(4, obj.getBaseSalary());
+            st.setInt(5, obj.getDepartment().getId());
+
+            int rowsAffected = st.executeUpdate();
+
+            if (rowsAffected > 0) {
+                ResultSet rs = st.getGeneratedKeys();
+                if (rs.next()) {
+                    int id = rs.getInt(1);
+                    obj.setId(id);
+                }
+                DB.closeResultSet(rs);
+            } else {
+                throw new DbException("Erro inesperado, nenhuma linha foi afetada!");
+            }
+
+
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            DB.closeStatement(st);
+        }
 
     }
 
@@ -73,28 +105,6 @@ public class SellerDaoJDBC implements SellerDao {
         }
 
 
-    }
-
-    /*
-        //Método auxiliar para instanciar as classes
-     */
-    private Seller instantiateSeller(ResultSet rs, Department dp) throws SQLException {
-        Seller obj = new Seller();
-        obj.setId(rs.getInt("id"));
-        obj.setName(rs.getString("Name"));
-        obj.setEmail(rs.getString("Email"));
-        obj.setBaseSalary(rs.getDouble("BaseSalary"));
-        obj.setBirthDate(rs.getDate("BirthDate"));
-        obj.setDepartment(dp);
-
-        return obj;
-    }
-
-    private Department instantiateDepartment(ResultSet rs) throws SQLException {
-        Department dp = new Department();
-        dp.setId(rs.getInt("DepartmentId"));
-        dp.setName(rs.getString("DepName"));
-        return dp;
     }
 
 
@@ -183,5 +193,27 @@ public class SellerDaoJDBC implements SellerDao {
             DB.closeStatement(st);
             DB.closeResultSet(rs);
         }
+    }
+
+    /*
+        //Método auxiliar para instanciar as classes
+     */
+    private Seller instantiateSeller(ResultSet rs, Department dp) throws SQLException {
+        Seller obj = new Seller();
+        obj.setId(rs.getInt("id"));
+        obj.setName(rs.getString("Name"));
+        obj.setEmail(rs.getString("Email"));
+        obj.setBaseSalary(rs.getDouble("BaseSalary"));
+        obj.setBirthDate(rs.getDate("BirthDate"));
+        obj.setDepartment(dp);
+
+        return obj;
+    }
+
+    private Department instantiateDepartment(ResultSet rs) throws SQLException {
+        Department dp = new Department();
+        dp.setId(rs.getInt("DepartmentId"));
+        dp.setName(rs.getString("DepName"));
+        return dp;
     }
 }
