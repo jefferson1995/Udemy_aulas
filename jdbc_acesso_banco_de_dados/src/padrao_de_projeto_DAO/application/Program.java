@@ -7,6 +7,7 @@ import padrao_de_projeto_DAO.entities.Seller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 /*
     Padrao de projeto DAO (Data Access Object)
@@ -34,6 +35,7 @@ public class Program {
     public static void main(String[] args) {
 
 
+        Scanner sc = new Scanner(System.in);
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
         System.out.println("=== TEST 1: seller findById ==== ");
@@ -71,6 +73,19 @@ public class Program {
         seller.setName("Martha Waine");
         sellerDao.update(seller);
         System.out.println("Update comleto");
+
+
+        //DELETE
+        System.out.println("\n=== TEST 6: seller DELETE ==== ");
+        System.out.print("Entre com um id para deletar: ");
+        int id = sc.nextInt();
+
+        sellerDao.deleteById(id);
+        System.out.println("Delete completo");
+
+        sc.close();
+
+
 
     }
 }
