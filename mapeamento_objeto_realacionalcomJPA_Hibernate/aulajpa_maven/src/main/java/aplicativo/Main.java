@@ -28,11 +28,9 @@ public class Main {
         em.persist(p3);
 
         em.getTransaction().commit(); //Para confirmar as transações realizadas
+        em.clear();
+        emf.close();
 
-
-        System.out.println(p1);
-        System.out.println(p2);
-        System.out.println(p3);
     }
 
 }
