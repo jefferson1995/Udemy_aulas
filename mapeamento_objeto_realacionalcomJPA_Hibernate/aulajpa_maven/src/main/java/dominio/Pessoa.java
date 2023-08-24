@@ -1,12 +1,18 @@
-package exemplo.dominio;
+package dominio;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
 public class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "nomeCompleto") //Caso precise mudar o nome da classe
     private String nome;
     private String email;
 
